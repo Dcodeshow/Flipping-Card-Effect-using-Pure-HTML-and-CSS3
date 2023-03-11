@@ -1,0 +1,110 @@
+/* @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Open+Sans:300,400|Oswald:400,700'); */
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Lato', sans-serif;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	background: #f4f4f4;
+	padding: 20px;
+}
+
+/***************/
+
+.flip-card {
+	width: 320px;
+	height: 380px;
+	margin: auto;
+}
+
+.flip-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+.front {
+	background-color: #3e5eb3;
+}
+
+.back {
+	background-color: #aa9e5c;
+	transform: rotateY(180deg);
+	padding: 30px;
+}
+
+.front,
+.back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	top: 0;
+	left: 0;
+	/* text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center; */
+}
+
+.front h4,
+.back h4 {
+	font-size: 24px;
+	color: #fff;
+}
+
+.flip-card:hover .flip-card-inner {
+	transform: rotateY(180deg);
+}
+
+/******options 2*****/
+
+.fit-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.image-text {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 2;
+	padding: 2rem;
+	color: #fff;
+}
+
+.image-text::before {
+	background-image: linear-gradient(180deg, #000, rgba(59, 59, 59, 0) 0, #000);
+	bottom: 0;
+	content: "";
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	z-index: -1;
+
+}
+
+.back span {
+	font-size: 14px;
+	display: block;
+	margin-bottom: 15px;
+	color: #fff;
+}
+
+.back p {
+	line-height: 1.5;
+	font-size: 16px;
+	color: #fff;
+}
